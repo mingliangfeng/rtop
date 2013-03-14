@@ -4,8 +4,8 @@ require File.expand_path('../lib/RTop/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Andrew Feng"]
   gem.email         = ["mingliangfeng@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Library for Taobao Open API }
+  gem.summary       = %q{Quick start to use Taobao Open API.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
