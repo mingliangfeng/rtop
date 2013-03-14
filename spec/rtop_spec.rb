@@ -9,6 +9,7 @@ describe RTop::RTop do
     item["title"].should_not equal(nil)
   end
   
+  
   it "generate the taobao configuration file taobao.yml" do
     RTop::Generators::Config.start()
   end

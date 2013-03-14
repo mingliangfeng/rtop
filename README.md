@@ -1,6 +1,6 @@
 # RTop
 
-TODO: Write a gem description
+Quick start to use Taobao Open API.
 
 ## Installation
 
