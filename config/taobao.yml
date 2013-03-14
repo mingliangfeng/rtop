@@ -1,0 +1,17 @@
+defaults: &DEFAULTS
+  app_key: test
+  secret_key: test
+
+development:
+  <<: *DEFAULTS
+  env: development # will use sandbox api url
+
+test:
+  <<: *DEFAULTS
+  env: test # will use sandbox api url
+
+production:
+  <<: *DEFAULTS
+  env: production # will use production api url
+  app_key: 1122334455
+  secret_key: 23424242424234234242423423
