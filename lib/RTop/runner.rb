@@ -2,7 +2,7 @@ require 'thor'
 
 module RTop
   class Runner < Thor
-    map "-v" => :version, "-g" => :generate
+    map "-v" => :version
   
     desc "version", "Show RTop version"
     def version
@@ -14,7 +14,7 @@ module RTop
     method_options :path => :string, :optional => true
     def generate
       require 'rtop/generators/config'
-      RTop::Generators::Config.start(path)
+      RTop::Generators::Config.start(options[:path])
     end
   
   end

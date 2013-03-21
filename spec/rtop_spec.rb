@@ -13,5 +13,13 @@ describe RTop::RTop do
   it "generate the taobao configuration file taobao.yml" do
     RTop::Generators::Config.start()
   end
+  
+  it "version test" do
+    RTop::Generators::Config.start()
+  end
+  
+  it "generate the taobao configuration file taobao.yml" do
+    RTop::Runner.start()
+  end
 
 end
