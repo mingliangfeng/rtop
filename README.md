@@ -29,9 +29,11 @@ Or install it yourself as:
    
 3. go into irb, and type:
 
+```ruby
     > rtop = RTop::RTop.new() # by default will use taobao.yml in current folder or ./config folder
     > item = rtop.get_item(1500022659003) # default to sandbox mode, so this item is from http://mini.tbsandbox.com/buyer/items_result.htm
     > puts item["title"]
+```
 
 ### Use with rails app
 Simply put configuration file to yourApp/config/ folder, and start to use:
