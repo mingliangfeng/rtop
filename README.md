@@ -18,9 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
+```shell
 rtop = RTop::RTop.new(File.join('config', 'taobao.yml'))
 item = rtop.get_item(1500022659003)
 puts item["title"]
+```
 
 ## Contributing
 

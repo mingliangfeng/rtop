@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["mingliangfeng@gmail.com"]
   gem.description   = %q{Library for Taobao Open API }
   gem.summary       = %q{Quick start to use Taobao Open API.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/mingliangfeng/rtop"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

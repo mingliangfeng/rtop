@@ -4,6 +4,7 @@ require "base64"
 require "uri"
 require 'httparty'
 require "yaml"
+require 'fileutils'
 
 module RTop
   class RTop
@@ -15,7 +16,18 @@ module RTop
     API_OPTION = { "format" => "json", "v" => "2.0", "sign_method" => "md5" }
     
     def initialize(config_file = nil)
-      config_file ||= "#{Rails.root}/config/taobao.yml"
+      unless config_file
+        if defined? Rails
+          config_file = "#{Rails.root}/config/taobao.yml"
+        else
+          config_file = File.join(Dir.pwd, 'config/taobao.yml')
+          unless File.file?(config_file)
+            config_file = File.join(Dir.pwd, 'taobao.yml')
+          end
+        end
+        raise "taobao.yml not found, generate one with 'rtop generate [path]'." unless File.file?(config_file)
+      end
+      
       @settings = YAML.load_file(config_file)
       @settings = (defined? Rails) ? @settings[Rails.env] : @settings["defaults"]
     end
