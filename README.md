@@ -18,11 +18,46 @@ Or install it yourself as:
 
 ## Usage
 
-```shell
-rtop = RTop::RTop.new(File.join('config', 'taobao.yml'))
-item = rtop.get_item(1500022659003)
-puts item["title"]
-```
+### Use in irb
+1. check rtop version in terminal:
+
+    rtop -v
+
+2. generate rtop configuration file:
+
+    rtop generate
+   
+3. go into irb, and type:
+   
+    rtop = RTop::RTop.new() # by default will use taobao.yml in current folder or ./config folder
+    item = rtop.get_item(1500022659003) # default to sandbox mode, so this item is from http://mini.tbsandbox.com/buyer/items_result.htm
+    puts item["title"]
+
+### Use with rails app
+Simply put configuration file to yourApp/config/ folder, and start to use:
+
+    rtop = RTop::RTop.new()
+    rtop...
+
+### sample of the configuration file
+
+		defaults: &DEFAULTS
+		  app_key: test
+		  secret_key: test
+		
+		development:
+		  <<: *DEFAULTS
+		  env: development # will use sandbox api url
+		
+		test:
+		  <<: *DEFAULTS
+		  env: test # will use sandbox api url
+		
+		production:
+		  <<: *DEFAULTS
+		  env: production # will use production api url
+		  app_key: 1122334455
+		  secret_key: 23424242424234234242423423
 
 ## Contributing
 
