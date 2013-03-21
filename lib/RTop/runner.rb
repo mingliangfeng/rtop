@@ -6,7 +6,7 @@ module RTop
   
     desc "version", "Show RTop version"
     def version
-      require 'thor/version'
+      require 'rtop/version'
       say "RTop #{RTop::VERSION}"
     end
   
