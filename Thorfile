@@ -1,5 +1,5 @@
 require 'thor'
-require './lib/rtop/generators/config'
+require 'rtop/generators/config'
 
 module RTop
   class Cli < Thor
