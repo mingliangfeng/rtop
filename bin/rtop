@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# -*- mode: ruby -*-
+
+require 'rtop/runner'
+
+RTop::Runner.start
